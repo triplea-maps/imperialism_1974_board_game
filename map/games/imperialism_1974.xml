@@ -1737,7 +1737,7 @@
 					<li>Territories with no armies in them will revert back to Neutral control and will not generate wealth.</li>
 					<li>Unit production is done at ports and requires spending wealth units present in the port. To build structures, you will first purchase and place corresponding "build" units in the port territory with the required wealth, following which you'll be given the actual unit to place elsewhere on the map.</li>
 					<li>Ships are built in a similar way as structures, except the player should (honor system) then place them next to the port where they were built.</li>
-					<li>Loading and unloading units requires fleets to be coasts, represented by seperate sea zones.</li>
+					<li>Loading and unloading units requires fleets to be on coasts, represented by seperate sea zones.</li>
 				</ul>
 
 				<h3>Unit summary and victory points</h3>
@@ -1751,7 +1751,7 @@
 				<tr><td>City</td><td>6</td><td>Increases territory wealth production. Capturable.</td></tr>
 				<tr><td>Fortification</td><td>2</td><td>Provides +2 bonus to defending armies. Capturable.</td></tr>
 				<tr><td>Wealth</td><td>2</td><td>Spent to produce units at ports. Capturable.</td></tr>
-				<tr><td>Fleet</td><td>2</td><td>Att/Def 2, Move 1, Transport Capacity 1.</td></tr>
+				<tr><td>Fleet</td><td>2</td><td>Att/Def 2, Move 1, Transports 1 Army or 1 Wealth.</td></tr>
 				<tr><td>Army</td><td>1</td><td>Att/Def 2, Move 1, defense bonus from Forts.</td></tr>
 				</table>
 

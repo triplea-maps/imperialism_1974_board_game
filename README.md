@@ -24,7 +24,7 @@ On your turn, you roll a die to determine which territories generate wealth. Eac
 *   Territories with no armies in them will revert back to Neutral control and will not generate wealth.
 *   Unit production is done at ports and requires spending wealth units present in the port. To build structures, you will first purchase and place corresponding "build" units in the port territory with the required wealth, following which you'll be given the actual unit to place elsewhere on the map.
 *   Ships are built in a similar way as structures, except the player should (honor system) then place them next to the port where they were built.
-*   Loading and unloading units requires fleets to be coasts, represented by seperate sea zones.
+*   Loading and unloading units requires fleets to be on coasts, represented by seperate sea zones.
 
 ### Unit summary and victory points
 
@@ -37,7 +37,7 @@ The goal is to have the most victory points at the end of the game, based on:
 | City          | 6                       | Increases territory wealth production. Capturable. |
 | Fortification | 2                       | Provides +2 bonus to defending armies. Capturable. |
 | Wealth        | 2                       | Spent to produce units at ports. Capturable.       |
-| Fleet         | 2                       | Att/Def 2, Move 1, Transport Capacity 1.           |
+| Fleet         | 2                       | Att/Def 2, Move 1, Transports 1 Army or 1 Wealth.  |
 | Army          | 1                       | Att/Def 2, Move 1, defense bonus from Forts.       |
 
 Victory points are automatically tracked by the game as a resource.
