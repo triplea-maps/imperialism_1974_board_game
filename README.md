@@ -30,7 +30,7 @@ On your turn, you roll a die to determine which territories generate wealth. Eac
 
 The goal is to have the most victory points at the end of the game, based on:
 
-| **Entity**    | **VPs**                 | **Note**                                           |
+| **Entity**    | **Victory Points**      | **Note**                                           |
 |---------------|-------------------------|----------------------------------------------------|
 | Territory     | 2 * wealth production # | Produces wealth if die roll &lt;= value.           |
 | Port          | 10                      | Factory building. Capturable.                      |

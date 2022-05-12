@@ -1745,7 +1745,7 @@
 				<p>The goal is to have the most victory points at the end of the game, based on:</p>
 				<br>
 				<table border=1>
-				<tr><th>Entity</th><th>VPs</th><th>Note</th></tr>
+				<tr><th>Entity</th><th>Victory Points</th><th>Note</th></tr>
 				<tr><td>Territory</td><td>2 * wealth production #</td><td>Produces wealth if die roll &lt;= value.</td></tr>
 				<tr><td>Port</td><td>10</td><td>Factory building. Capturable.</td></tr>
 				<tr><td>City</td><td>6</td><td>Increases territory wealth production. Capturable.</td></tr>
