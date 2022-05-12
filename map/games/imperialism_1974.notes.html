@@ -1,0 +1,84 @@
+<h1>Imperialism - 1974 Board Game</h1>
+
+<p>This map is an adaptation of the 1974 board game Imperialism to the TripleA engine:<br>
+<a href="https://boardgamegeek.com/boardgame/14544/imperialism">https://boardgamegeek.com/boardgame/14544/imperialism</a>
+</p>
+
+<p>It has a number of unique mechanics that differ from other TripleA maps. At the same time,
+various features of the original game are not currently possible with TripleA; these are documented
+later.</p>
+<p>The map is generally playable, except for AI which struggles with the mechanics.</p>
+
+<h3>Overview</h3>
+<p>In this game, players start in the "old world" and sail to explore and gain control of
+"new world" territories. When a territory is first captured, it will get a "wealth production"
+rating (max 6 for new world or 4 for old world other than starting territories).</p>
+
+<p>On your turn, you roll a die to determine which territories generate wealth. Each territory
+with wealth production higher or equal to the die roll will spawn one wealth unit (so territory
+wealth of 6 always succeeds and the lower the wealth roll the better). These wealth units must be
+brought to ports so they can be used for purchasing units. A city will increase the wealth
+production of a territory by 1.</p>
+
+<br>
+
+<h3>Additional rules</h3>
+<ul>
+	<li>Players choose their starting territory, which must be on a coast in the old world (top left island).</li>
+	<li>Armies and fleets attack and defend on 2, but armies get a defensive bonus of +2 with fortifications. Note: This is different from the original board game combat rules, which TripleA isn't able to support.</li>
+	<li>Armies, fleet and wealth have a movement of 1. A fleet can transport an army or a wealth.</li>
+	<li>Structures and wealth are capturable.</li>
+	<li>Production and placement are before movement. No separate non-combat move.</li>
+	<li>Newly-built armies cannot participate in attacks.</li>
+	<li>Territories with no armies in them will revert back to Neutral control and will not generate wealth.</li>
+	<li>Unit production is done at ports and requires spending wealth units present in the port. To build structures, you will first purchase and place corresponding "build" units in the port territory with the required wealth, following which you'll be given the actual unit to place elsewhere on the map.</li>
+	<li>Ships are built in a similar way as structures, except the player should (honor system) then place them next to the port where they were built.</li>
+	<li>Loading and unloading units requires fleets to be coasts, represented by seperate sea zones.</li>
+</ul>
+
+<h3>Unit summary and victory points</h3>
+
+<p>The goal is to have the most victory points at the end of the game, based on:</p>
+<br>
+<table border=1>
+<tr><th>Entity</th><th>VPs</th><th>Note</th></tr>
+<tr><td>Territory</td><td>2 * wealth production #</td><td>Produces wealth if die roll &lt;= value.</td></tr>
+<tr><td>Port</td><td>10</td><td>Factory building. Capturable.</td></tr>
+<tr><td>City</td><td>6</td><td>Increases territory wealth production. Capturable.</td></tr>
+<tr><td>Fortification</td><td>2</td><td>Provides +2 bonus to defending armies. Capturable.</td></tr>
+<tr><td>Wealth</td><td>2</td><td>Spent to produce units at ports. Capturable.</td></tr>
+<tr><td>Fleet</td><td>2</td><td>Att/Def 2, Move 1, Transport Capacity 1.</td></tr>
+<tr><td>Army</td><td>1</td><td>Att/Def 2, Move 1, defense bonus from Forts.</td></tr>
+</table>
+
+<p>Victory points are automatically tracked by the game as a resource.</p>
+
+<p>The board game specifies that the game ends when the last card is drawn from the deck,
+but the card mechanics are not implemented in this version. Players can instead agree on a
+pretedetermined round number to end the game - or play until surrender.</p>
+<br>
+
+<h3>Original board game functionality missing from this adaptation</h3>
+<ul>
+	<li>Randomization of player order</li>
+	<li>Drawing and playing cards from the deck</li>
+	<li>Random Storm/Pirate events</li>
+	<li>Terrain types - mountains, rivers, etc and their effects</li>
+	<li>Combat dice calculations matching the original game</li>
+	<li>Fortifications providing a "first strike" defensive bonus</li>
+	<li>Land battles being optional</li>
+	<li>Being able to select which opponent(s) you fight when 3+ players in territory</li>
+	<li>Being able to leave contested land territories</li>
+	<li>Being able to capture wealth cargo at sea</li>
+	<li>Being able to load newly-built armies on fleets</li>
+	<li>Ships on coasts being able to participate in adjacent sea combats</li>
+	<li>Ports being treated as a "territory"</li>
+	<li>Ships having to "retreat" from captured territory ports</li>
+</ul>
+
+<h3>Illegal moves allowed by the engine (honor system for humans)</h3>
+<ul>
+	<li>Units being able to be loaded and unloaded on the same turn</li>
+	<li>Placing built fleets in ports elsewhere than where the wealth to build them came from</li> 
+	<li>Splitting up placement of the initial fleet</li> 
+</ul>
