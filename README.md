@@ -69,4 +69,4 @@ The board game specifies that the game ends when the last card is drawn from the
 
 ### Credits
 
-Some of the images (port icon, gear icon, etc) come from [OpenMoji](https://openmoji.org/li) – the open-source emoji and icon project. License: CC BY-SA 4.0
+Some of the images (port icon, gear icon, etc) come from [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project. License: CC BY-SA 4.0
