@@ -66,3 +66,7 @@ The board game specifies that the game ends when the last card is drawn from the
 *   Units being able to be loaded and unloaded on the same turn
 *   Placing built fleets in ports elsewhere than where the wealth to build them came from
 *   Splitting up placement of the initial fleet
+
+### Credits
+
+Some of the images (port icon, gear icon, etc) come from [OpenMoji](https://openmoji.org/li) – the open-source emoji and icon project. License: CC BY-SA 4.0
