@@ -664,7 +664,7 @@
 		<unit name="wealth"/>
 		<unit name="army"/>
 		<unit name="new_army"/>
-		<unit name="fortified_army_first_strike"/>
+		<unit name="fort_defense"/>
 		<unit name="fleet"/>
 		<unit name="build_fleet"/>
 		<unit name="fort"/>
@@ -866,7 +866,7 @@
 			<option name="attack" value="2"/>
 			<option name="defense" value="2"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="fortified_army_first_strike" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="fort_defense" javaClass="UnitAttachment" type="unitType">
 			<option name="movement" value="0"/>
 			<option name="isFirstStrike" value="true"/>
 			<option name="attack" value="0"/>
@@ -1716,186 +1716,167 @@
 			<option name="directPresenceTerritories" value="@land_territories@" count="1"/>
 			<option name="unitPresence" value="army" count="20"/>
 		</attachment>
-        <attachment name="add_fort_defense_army_1_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_1_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_1_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_2_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_2_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_2_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_3_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_3_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_3_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_4_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_4_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_4_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_5_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_5_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_5_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_6_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_6_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_6_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_7_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_7_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_7_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_8_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_8_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_8_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_9_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_9_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_9_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_10_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_10_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_10_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_11_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_11_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_11_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_12_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_12_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_12_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_13_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_13_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_13_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_14_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_14_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_14_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_15_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_15_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_15_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_16_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_16_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_16_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_17_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_17_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_17_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_18_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_18_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_18_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_19_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_19_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_19_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
-        <attachment name="add_fort_defense_army_20_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+        <attachment name="add_fort_defense_20_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<option name="when" value="before:Never"/>
 			<option name="conditions" value="army_count_20_@players_and_neutral@_@land_territories@"/>
-			<option name="placement" value="@land_territories@:fortified_army_first_strike" count="1"/>
+			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
 
 		<attachment name="add_fort_defenses_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<!-- We need to do it for all players' phases because we're adding units for the defender. -->
-			<option name="when" value="after:BlueStructuresPlace"/>
-			<option name="when" value="after:RedStructuresPlace"/>
-			<option name="when" value="after:GreenStructuresPlace"/>
-			<option name="when" value="after:YellowStructuresPlace"/>
-			<option name="when" value="after:OrangeStructuresPlace"/>
-			<option name="when" value="after:CyanStructuresPlace"/>
-			<option name="when" value="after:PurpleStructuresPlace"/>
-			<option name="when" value="after:BrownStructuresPlace"/>
+			<option name="when" value="before:BlueWealthPlace"/>
+			<option name="when" value="before:RedWealthPlace"/>
+			<option name="when" value="before:GreenWealthPlace"/>
+			<option name="when" value="before:YellowWealthPlace"/>
+			<option name="when" value="before:OrangeWealthPlace"/>
+			<option name="when" value="before:CyanWealthPlace"/>
+			<option name="when" value="before:PurpleWealthPlace"/>
+			<option name="when" value="before:BrownWealthPlace"/>
 			<option name="conditions" value="has_fort_@players_and_neutral@_@land_territories@"/>
 			<!-- triggerName:numberOfTimes:useUses:testUses:testConditions:testChance, we want to test the cond. -->
-			<option name="activateTrigger" value="add_fort_defense_army_1_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_2_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_3_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_4_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_5_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_6_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_7_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_8_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_9_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_10_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_11_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_12_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_13_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_14_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_15_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_16_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_17_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_18_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_19_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
-			<option name="activateTrigger" value="add_fort_defense_army_20_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_1_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_2_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_3_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_4_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_5_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_6_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_7_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_8_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_9_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_10_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_11_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_12_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_13_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_14_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_15_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_16_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_17_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_18_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_19_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+			<option name="activateTrigger" value="add_fort_defense_20_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
 		</attachment>
-
-		<!-- another option: remove them anywhere where there are combats or no units from the active player -->
-		<attachment name="remove_own_fort_defense_armies_@players@" attachTo="@players@" foreach="$players$"
+		<attachment name="remove_own_fort_defense_@players@" attachTo="@players@" foreach="$players$"
 			javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="cond_true_@players@"/>
-			<option name="when" value="before:@players@CombatMove"/>
-			<option name="removeUnits" value="all:fortified_army_first_strike" count="1000"/>
+			<option name="when" value="after:@players@WealthPlace"/>
+			<option name="removeUnits" value="all:fort_defense" count="1000"/>
 		</attachment>
-
-		<!-- This is pretty jarring. Perhaps we can just remove the current player's ones during his turn? -->
-		<attachment name="remove_fortified_armies" attachTo="Blue"
-			javaClass="TriggerAttachment" type="player">
-			<option name="conditions" value="cond_true_Blue"/>
-			<option name="when" value="after:BlueBattle"/>
-			<option name="when" value="after:RedBattle"/>
-			<option name="when" value="after:GreenBattle"/>
-			<option name="when" value="after:YellowBattle"/>
-			<option name="when" value="after:OrangeBattle"/>
-			<option name="when" value="after:CyanBattle"/>
-			<option name="when" value="after:PurpleBattle"/>
-			<option name="when" value="after:BrownBattle"/>	
-			<option name="players" value="$players$:Neutrals"/>
-			<option name="removeUnits" value="all:fortified_army_first_strike" count="1000"/>
-		</attachment>
-		
 	</attachmentList>
 	<initialize>
 		<ownerInitialize>
