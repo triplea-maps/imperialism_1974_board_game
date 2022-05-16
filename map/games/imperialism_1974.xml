@@ -1899,6 +1899,10 @@
 	</attachmentList>
 	<initialize>
 		<ownerInitialize>
+	        <territoryOwner territory="Anyang" owner="Neutrals"/>
+	        <territoryOwner territory="Bac Lieu" owner="Neutrals"/>
+	        <territoryOwner territory="Pskov" owner="Neutrals"/>
+	        <territoryOwner territory="Tomsk" owner="Neutrals"/>
 		</ownerInitialize>
 		<unitInitialize>
             <unitPlacement unitType="fort" territory="Anyang" quantity="1" owner="Neutrals"/>
