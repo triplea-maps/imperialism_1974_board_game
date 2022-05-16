@@ -517,9 +517,7 @@
 		<connection t1="Imphal Coast" t2="The Blue Sea"/>
 		<connection t1="Ivanovo" t2="Ivanovo Coast"/>
 		<connection t1="Ivanovo" t2="Kazan"/>
-		<connection t1="Ivanovo" t2="Kazan Coast"/>
 		<connection t1="Ivanovo" t2="Kirov"/>
-		<connection t1="Ivanovo" t2="Kirov S Coast"/>
 		<connection t1="Ivanovo Coast" t2="Kazan Coast"/>
 		<connection t1="Ivanovo Coast" t2="Kirov S Coast"/>
 		<connection t1="Ivanovo Coast" t2="The Blue Sea"/>
@@ -975,7 +973,7 @@
 			<option name="retainCapitalProduceNumber" value="0"/>
 		</attachment>
 		
-		<attachment name="cond_true_@players@" attachTo="@players@" foreach="$players$" javaClass="RulesAttachment" type="player">
+		<attachment name="cond_true_@players_and_neutral@" attachTo="@players_and_neutral@" foreach="$players_and_neutral$" javaClass="RulesAttachment" type="player">
 			<option name="switch" value="true"/>
 		</attachment>
 
@@ -1837,17 +1835,14 @@
 			<option name="placement" value="@land_territories@:fort_defense" count="1"/>
         </attachment>
 
+		<attachment name="remove_fort_defenses_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
+			<option name="when" value="after:Never"/>
+			<option name="removeUnits" value="@land_territories@:fort_defense" count="1000"/>
+		</attachment>
 		<attachment name="add_fort_defenses_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
-			<!-- We need to do it for all players' phases because we're adding units for the defender. -->
-			<option name="when" value="before:BlueWealthPlace"/>
-			<option name="when" value="before:RedWealthPlace"/>
-			<option name="when" value="before:GreenWealthPlace"/>
-			<option name="when" value="before:YellowWealthPlace"/>
-			<option name="when" value="before:OrangeWealthPlace"/>
-			<option name="when" value="before:CyanWealthPlace"/>
-			<option name="when" value="before:PurpleWealthPlace"/>
-			<option name="when" value="before:BrownWealthPlace"/>
+			<option name="when" value="after:Never"/>
 			<option name="conditions" value="has_fort_@players_and_neutral@_@land_territories@"/>
 			<!-- triggerName:numberOfTimes:useUses:testUses:testConditions:testChance, we want to test the cond. -->
 			<option name="activateTrigger" value="add_fort_defense_1_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
@@ -1871,6 +1866,26 @@
 			<option name="activateTrigger" value="add_fort_defense_19_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
 			<option name="activateTrigger" value="add_fort_defense_20_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
 		</attachment>
+		
+		<attachment name="update_fort_defenses_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
+			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
+			<!-- We need to do it for all players' phases because we're adding units for the defender. -->
+			<option name="when" value="before:BlueWealthPlace"/>
+			<option name="when" value="before:RedWealthPlace"/>
+			<option name="when" value="before:GreenWealthPlace"/>
+			<option name="when" value="before:YellowWealthPlace"/>
+			<option name="when" value="before:OrangeWealthPlace"/>
+			<option name="when" value="before:CyanWealthPlace"/>
+			<option name="when" value="before:PurpleWealthPlace"/>
+			<option name="when" value="before:BrownWealthPlace"/>
+			<option name="conditions" value="cond_true_@players_and_neutral@"/>
+			<!-- First, remove existing fort defenses, then re-add them -->
+			<!-- Note: We can't inline things, because ordering of remove is always after add, but activateTrigger is last. -->
+			<!-- triggerName:numberOfTimes:useUses:testUses:testConditions:testChance -->
+			<option name="activateTrigger" value="remove_fort_defenses_@players_and_neutral@_@land_territories@:1:false:false:false:false"/>
+			<option name="activateTrigger" value="add_fort_defenses_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
+		</attachment>
+		
 		<attachment name="remove_own_fort_defense_@players@" attachTo="@players@" foreach="$players$"
 			javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="cond_true_@players@"/>
