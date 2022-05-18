@@ -35,11 +35,11 @@ The goal is to have the most victory points at the end of the game, based on:
 | Territory     | 2 * wealth production # | Produces wealth if die roll &lt;= value.           |
 | Port          | 10                      | Factory building. Capturable.                      |
 | City          | 6                       | Increases territory wealth production. Capturable. |
-| Fort          | 2                       | Provides +2 bonus to defending armies. Capturable. |
-| Wealth        | 2                       | Spent to produce units at ports. Capturable.       |
+| Fort          | 2                       | Gives Fort Defense bonus to Armies. Capturable.    |
+| Wealth        | 2                       | Spent to produce units at Ports. Capturable.       |
 | Fleet         | 2                       | Att/Def 2, Move 1, Transports 1 Army or 1 Wealth.  |
-| Army          | 1                       | Att/Def 2, Move 1, defense bonus from Forts.       |
-| Fort Defense  | 0                       | Gives +2 Def First Strike bonus to Armies in Forts.|
+| Army          | 1                       | Att/Def 2, Move 1. Fort Defense bonus at own Forts.|
+| Fort Defense  | 0                       | Armies at own Forts get a First Strike 2 Def roll. |
 
 Victory points are automatically tracked by the game as a resource.
 
