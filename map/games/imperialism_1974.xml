@@ -1061,7 +1061,7 @@
 
 		<attachment name="wealth_die_@nums_1_to_6@_@players@" attachTo="@players@" foreach="$players$^$nums_1_to_6$" javaClass="RulesAttachment" type="player">
 			<option name="directPresenceTerritories" value="Wealth Roll" count="1"/>
-			<option name="unitPresence" count="1" value="territory_wealth_@nums_1_to_6@"/>
+			<option name="unitPresence" count="1" value="wealth_roll_@nums_1_to_6@"/>
 		</attachment>
 		<attachment name="wealth_die_2_or_less_@players@" attachTo="@players@" foreach="$players$^$nums_1_to_6$" javaClass="RulesAttachment" type="player">
 			<option name="conditionType" value="OR"/>
