@@ -945,19 +945,6 @@
 			<option name="constructionsPerTerrPerTypePerTurn" value="1"/>
 			<option name="maxConstructionsPerTypePerTerr" value="1"/>
 		</attachment>
-		<!-- FIXME: Need to do "first strike" bonus. For now, this just increase strength from 2 to 4. -->
-		<!--
-		<attachment name="supportAttachment_fort" attachTo="fort" javaClass="UnitSupportAttachment" type="unitType">
-			<option name="unitType" value="army"/>
-			<option name="side" value="defence"/>
-			<option name="dice" value="strength"/>
-			<option name="faction" value="allied"/>
-			<option name="bonus" value="2"/>
-			<option name="number" value="1000"/>
-			<option name="bonusType" value="army_bonus"/>
-	        <option name="players" value="$players$:Neutrals"/>
-		</attachment>
-		-->
 		<attachment name="territoryAttachment" attachTo="@land_territories@" foreach="$land_territories$"
 			javaClass="TerritoryAttachment" type="territory">
 			<option name="production" value="100"/>
