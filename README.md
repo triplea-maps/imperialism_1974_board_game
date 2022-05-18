@@ -16,7 +16,7 @@ On your turn, you roll a die to determine which territories generate wealth. Eac
 ### Additional rules
 
 *   Players choose their starting territory, which must be on a coast in the old world (top left island).
-*   Armies and fleets attack and defend on 2, but armies get a defensive bonus of +2 with fortifications. Note: This is different from the original board game combat rules, which TripleA isn't able to support.
+*   Armies and fleets attack and defend on 2. Forts provide defense support with an extra strength 2 first strike roll per defending army. Note: This is different from the original board game combat rules, which TripleA isn't able to support.</li>
 *   Armies, fleet and wealth have a movement of 1\. A fleet can transport an army or a wealth.
 *   Structures and wealth are capturable.
 *   Production and placement are before movement. No separate non-combat move.
@@ -35,10 +35,11 @@ The goal is to have the most victory points at the end of the game, based on:
 | Territory     | 2 * wealth production # | Produces wealth if die roll &lt;= value.           |
 | Port          | 10                      | Factory building. Capturable.                      |
 | City          | 6                       | Increases territory wealth production. Capturable. |
-| Fortification | 2                       | Provides +2 bonus to defending armies. Capturable. |
-| Wealth        | 2                       | Spent to produce units at ports. Capturable.       |
+| Fort          | 2                       | Gives Fort Defense bonus to Armies. Capturable.    |
+| Wealth        | 2                       | Spent to produce units at Ports. Capturable.       |
 | Fleet         | 2                       | Att/Def 2, Move 1, Transports 1 Army or 1 Wealth.  |
-| Army          | 1                       | Att/Def 2, Move 1, defense bonus from Forts.       |
+| Army          | 1                       | Att/Def 2, Move 1. Fort Defense bonus at own Forts.|
+| Fort Defense  | 0                       | Armies at own Forts get a First Strike 2 Def roll. |
 
 Victory points are automatically tracked by the game as a resource.
 
@@ -46,12 +47,11 @@ The board game specifies that the game ends when the last card is drawn from the
 
 ### Original board game functionality missing from this adaptation
 
-*   Randomization of player order
+*   Randomization of player order, which can be done outside TripleA before starting
 *   Drawing and playing cards from the deck
 *   Random Storm/Pirate events
 *   Terrain types - mountains, rivers, etc and their effects
 *   Combat dice calculations matching the original game
-*   Fortifications providing a "first strike" defensive bonus
 *   Land battles being optional
 *   Being able to select which opponent(s) you fight when 3+ players in territory
 *   Being able to leave contested land territories
