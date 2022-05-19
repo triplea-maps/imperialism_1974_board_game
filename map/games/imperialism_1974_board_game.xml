@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-	<info name="imperialism_1974" version="2.5"/>
+	<info name="imperialism_1974_board_game" version="2.5"/>
 	<loader javaClass="games.strategy.triplea.TripleA"/>
 	<variableList>
 		<variable name="nums_1_to_6">
@@ -1972,7 +1972,7 @@
 			<boolean/>
 		</property>
 		<!-- Can remove if we support 2.6+ -->
-		<property name="mapName" value="Imperialism_1974" editable="false"/>
+		<property name="mapName" value="Imperialism 1974 Board Game" editable="false"/>
 		<property name="notes">
 			<value><![CDATA[
 				<h1>Imperialism - 1974 Board Game</h1>
