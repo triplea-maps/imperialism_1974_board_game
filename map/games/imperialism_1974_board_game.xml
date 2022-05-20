@@ -354,7 +354,6 @@
 		<connection t1="Aduwa" t2="Aduwa E Coast"/>
 		<connection t1="Aduwa" t2="Aduwa N Coast"/>
 		<connection t1="Aduwa" t2="Ambo"/>
-		<connection t1="Aduwa" t2="Ambo S Coast"/>
 		<connection t1="Aduwa" t2="Gondar"/>
 		<connection t1="Aduwa E Coast" t2="Aduwa N Coast"/>
 		<connection t1="Aduwa E Coast" t2="Ambo S Coast"/>
@@ -556,7 +555,6 @@
 		<connection t1="Malden" t2="Palmyra"/>
 		<connection t1="Malden Coast" t2="Palmyra W Coast"/>
 		<connection t1="Malden Coast" t2="The Blue Sea"/>
-		<connection t1="Mersin" t2="Cartagena Coast"/>
 		<connection t1="Mersin" t2="Mersin E Coast"/>
 		<connection t1="Mersin" t2="Mersin N Coast"/>
 		<connection t1="Mersin" t2="Nicosia"/>
