@@ -360,7 +360,6 @@
 		<connection t1="Aduwa E Coast" t2="Ambo S Coast"/>
 		<connection t1="Aduwa E Coast" t2="South Central Sea"/>
 		<connection t1="Aduwa N Coast" t2="Gondar N Coast"/>
-		<connection t1="Aduwa N Coast" t2="South Central Sea"/>
 		<connection t1="Aduwa N Coast" t2="The Blue Sea"/>
 		<connection t1="Aki-Aki" t2="Aki-Aki E Coast"/>
 		<connection t1="Aki-Aki" t2="Aki-Aki W Coast"/>
@@ -369,7 +368,6 @@
 		<connection t1="Aki-Aki E Coast" t2="Aki-Aki W Coast"/>
 		<connection t1="Aki-Aki E Coast" t2="North Central Ocean"/>
 		<connection t1="Aki-Aki E Coast" t2="Palmyra E Coast"/>
-		<connection t1="Aki-Aki E Coast" t2="The Blue Sea"/>
 		<connection t1="Aki-Aki W Coast" t2="Malden Coast"/>
 		<connection t1="Aki-Aki W Coast" t2="The Blue Sea"/>
 		<connection t1="Ambo" t2="Ambo S Coast"/>
@@ -456,7 +454,6 @@
 		<connection t1="Culiacan N Coast" t2="Sea of Leon"/>
 		<connection t1="Culiacan N Coast" t2="Sea of Peace"/>
 		<connection t1="Culiacan W Coast" t2="Dominica W Coast"/>
-		<connection t1="Culiacan W Coast" t2="Sea of Peace"/>
 		<connection t1="Dominica" t2="Dominica S Coast"/>
 		<connection t1="Dominica" t2="Dominica W Coast"/>
 		<connection t1="Dominica" t2="Leon"/>
@@ -488,7 +485,6 @@
 		<connection t1="Gondar N Coast" t2="Gondar W Coast"/>
 		<connection t1="Gondar N Coast" t2="The Blue Sea"/>
 		<connection t1="Gondar W Coast" t2="Sea of Lodwar"/>
-		<connection t1="Gondar W Coast" t2="The Blue Sea"/>
 		<connection t1="Harbin" t2="Harbin Coast"/>
 		<connection t1="Harbin" t2="Kazan"/>
 		<connection t1="Harbin" t2="Lubo"/>
@@ -593,13 +589,11 @@
 		<connection t1="Palma" t2="Palma S Coast"/>
 		<connection t1="Palma" t2="Palma W Coast"/>
 		<connection t1="Palma S Coast" t2="Palma W Coast"/>
-		<connection t1="Palma S Coast" t2="The Passage"/>
 		<connection t1="Palma W Coast" t2="The Passage"/>
 		<connection t1="Palmyra" t2="Palmyra E Coast"/>
 		<connection t1="Palmyra" t2="Palmyra N Coast"/>
 		<connection t1="Palmyra" t2="Palmyra W Coast"/>
 		<connection t1="Palmyra E Coast" t2="Palmyra N Coast"/>
-		<connection t1="Palmyra N Coast" t2="North Central Ocean"/>
 		<connection t1="Palmyra N Coast" t2="Palmyra W Coast"/>
 		<connection t1="Palmyra N Coast" t2="Sea of Peace"/>
 		<connection t1="Palmyra W Coast" t2="The Blue Sea"/>
@@ -1429,12 +1423,6 @@
 			<option name="placement" value="@old_world_land_territories@:fort" count="1"/>
 			<option name="placement" value="@old_world_land_territories@:army" count="10"/>
         </attachment>
-        <attachment name="clear_new_world_units_@players@_@new_world_land_territories@" attachTo="@players@" foreach="$players$^$new_world_land_territories$" javaClass="TriggerAttachment" type="player">
-            <option name="when" value="after:setupRandomStartDelegate"/>
-			<option name="conditions" value="cond_true_@players@"/>
-			<option name="players" value="Neutrals"/>
-			<option name="removeUnits" value="@new_world_land_territories@:army" count="1"/>
-        </attachment>
 		<!-- For some reason, can"t attach these to Neutral player. So attach to Blue. This is OK even if Blue is disabled. -->
 		<attachment name="is_neutral_@old_world_land_territories@" attachTo="Blue"
 			foreach="$old_world_land_territories$" javaClass="RulesAttachment" type="player">
@@ -1886,6 +1874,33 @@
 	        <territoryOwner territory="Bac Lieu" owner="Neutrals"/>
 	        <territoryOwner territory="Pskov" owner="Neutrals"/>
 	        <territoryOwner territory="Tomsk" owner="Neutrals"/>
+			<territoryOwner territory="Aduwa" owner="Neutrals"/>
+			<territoryOwner territory="Aki-Aki" owner="Neutrals"/>
+			<territoryOwner territory="Ambo" owner="Neutrals"/>
+			<territoryOwner territory="Andres" owner="Neutrals"/>
+			<territoryOwner territory="Bari" owner="Neutrals"/>
+			<territoryOwner territory="Billings" owner="Neutrals"/>
+			<territoryOwner territory="Cartagena" owner="Neutrals"/>
+			<territoryOwner territory="Cork" owner="Neutrals"/>
+			<territoryOwner territory="Culiacan" owner="Neutrals"/>
+			<territoryOwner territory="Dominica" owner="Neutrals"/>
+			<territoryOwner territory="Galway" owner="Neutrals"/>
+			<territoryOwner territory="Gondar" owner="Neutrals"/>
+			<territoryOwner territory="Helena" owner="Neutrals"/>
+			<territoryOwner territory="Juwara" owner="Neutrals"/>
+			<territoryOwner territory="Leon" owner="Neutrals"/>
+			<territoryOwner territory="Lodwar" owner="Neutrals"/>
+			<territoryOwner territory="Malden" owner="Neutrals"/>
+			<territoryOwner territory="Mersin" owner="Neutrals"/>
+			<territoryOwner territory="Nicosia" owner="Neutrals"/>
+			<territoryOwner territory="Oaxaca" owner="Neutrals"/>
+			<territoryOwner territory="Palma" owner="Neutrals"/>
+			<territoryOwner territory="Palmyra" owner="Neutrals"/>
+			<territoryOwner territory="Reno" owner="Neutrals"/>
+			<territoryOwner territory="St Lucia" owner="Neutrals"/>
+			<territoryOwner territory="Tebuk" owner="Neutrals"/>
+			<territoryOwner territory="Waco" owner="Neutrals"/>
+			<territoryOwner territory="Yorkton" owner="Neutrals"/>
 		</ownerInitialize>
 		<unitInitialize>
             <unitPlacement unitType="fort" territory="Anyang" quantity="1" owner="Neutrals"/>
@@ -1896,34 +1911,6 @@
             <unitPlacement unitType="army" territory="Pskov" quantity="1" owner="Neutrals"/>
             <unitPlacement unitType="fort" territory="Tomsk" quantity="1" owner="Neutrals"/>
             <unitPlacement unitType="army" territory="Tomsk" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Aduwa" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Aki-Aki" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Ambo" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Andres" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Bari" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Billings" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Cartagena" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Cork" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Culiacan" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Dominica" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Galway" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Gondar" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Helena" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Juwara" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Leon" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Lodwar" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Malden" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Mersin" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Nicosia" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Oaxaca" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Palma" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Palmyra" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Reno" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="St Lucia" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Tebuk" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Waco" quantity="1" owner="Neutrals"/>
-            <unitPlacement unitType="army" territory="Yorkton" quantity="1" owner="Neutrals"/>
-
 			<heldUnits unitType="port" quantity="1" player="Blue"/>
 			<heldUnits unitType="port" quantity="1" player="Red"/>
 			<heldUnits unitType="port" quantity="1" player="Green"/>
