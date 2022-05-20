@@ -756,8 +756,8 @@
 			<step name="YellowEndTurn" delegate="endTurn" player="Yellow"/>
 			<step name="OrangeWealthPlace" delegate="wealth_place" player="Orange"/>
 			<step name="OrangePurchase" delegate="purchase" player="Orange"/>
-			<step name="OrangeStructuresPlace" delegate="structures_place" player="Orange"/>
 			<step name="OrangePlace" delegate="place" player="Orange"/>
+			<step name="OrangeStructuresPlace" delegate="structures_place" player="Orange"/>
 			<step name="OrangeCombatMove" delegate="move" player="Orange">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
