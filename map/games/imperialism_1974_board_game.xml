@@ -442,7 +442,6 @@
 		<connection t1="Cork N Coast" t2="Cork S Coast"/>
 		<connection t1="Cork N Coast" t2="Eastern Sea"/>
 		<connection t1="Cork N Coast" t2="Galway N Coast"/>
-		<connection t1="Cork S Coast" t2="Eastern Sea"/>
 		<connection t1="Cork S Coast" t2="Galway S Coast"/>
 		<connection t1="Cork S Coast" t2="Ice Sea"/>
 		<connection t1="Culiacan" t2="Culiacan N Coast"/>
@@ -452,7 +451,7 @@
 		<connection t1="Culiacan N Coast" t2="Culiacan W Coast"/>
 		<connection t1="Culiacan N Coast" t2="Oaxaca Coast"/>
 		<connection t1="Culiacan N Coast" t2="Sea of Leon"/>
-		<connection t1="Culiacan N Coast" t2="Sea of Peace"/>
+		<connection t1="Culiacan W Coast" t2="Sea of Peace"/>
 		<connection t1="Culiacan W Coast" t2="Dominica W Coast"/>
 		<connection t1="Dominica" t2="Dominica S Coast"/>
 		<connection t1="Dominica" t2="Dominica W Coast"/>
