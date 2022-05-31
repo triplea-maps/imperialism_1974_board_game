@@ -879,13 +879,13 @@
 		<playerProduction player="Brown" frontier="production"/>
 	</production>
 	<attachmentList>
-		<attachment name="unitAttachment" attachTo="wealth" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="wealth" javaClass="UnitAttachment">
 			<option name="movement" value="1"/>
 			<option name="transportCost" value="1"/>
 			<option name="isInfrastructure" value="true"/>
 		</attachment>
 		<!-- Armies built this turn start as new_army units, which can't attack. -->
-		<attachment name="unitAttachment" attachTo="new_army" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="new_army" javaClass="UnitAttachment">
 			<option name="movement" value="1"/>
 			<!-- FIXME: Currently not transportable because our triggers aren't able to convert to army at sea. -->
 			<!-- <option name="transportCost" value="1"/> -->
@@ -896,20 +896,20 @@
 			<option name="consumesUnits" value="1:wealth"/>
 			<option name="requiresUnits" value="wealth"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="army" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="army" javaClass="UnitAttachment">
 			<option name="movement" value="1"/>
 			<option name="transportCost" value="1"/>
 			<option name="attack" value="2"/>
 			<option name="defense" value="2"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="fort_defense" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="fort_defense" javaClass="UnitAttachment">
 			<option name="movement" value="0"/>
 			<option name="isFirstStrike" value="true"/>
 			<option name="attack" value="0"/>
 			<option name="defense" value="2"/>
 			<option name="isSuicideOnDefense" value="true"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="fleet" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="fleet" javaClass="UnitAttachment">
 			<option name="movement" value="1"/>
 			<option name="isSea" value="true"/>
 			<option name="isCombatTransport" value="true"/>
@@ -917,24 +917,24 @@
 			<option name="attack" value="2"/>
 			<option name="defense" value="2"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="build_fleet" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="build_fleet" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="consumesUnits" value="1:wealth"/>
 			<option name="requiresUnits" value="wealth"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="city" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="city" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="isConstruction" value="true"/>
 			<option name="constructionType" value="city_structure"/>
 			<option name="constructionsPerTerrPerTypePerTurn" value="1"/>
 			<option name="maxConstructionsPerTypePerTerr" value="1"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="build_city" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="build_city" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="consumesUnits" value="4:wealth"/>
 			<option name="requiresUnits" value="wealth"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="port" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="port" javaClass="UnitAttachment">
 			<option name="canProduceUnits" value="true"/>
 			<option name="canProduceXUnits" value="20"/>
 			<option name="isInfrastructure" value="true"/>
@@ -945,38 +945,38 @@
 			<!-- Disallow placements on non-coast territories -->
 			<option name="unitPlacementRestrictions" value="Anyang:Bac Lieu:Pskov:Tomsk:Leon:Bari"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="build_port" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="build_port" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="consumesUnits" value="4:wealth"/>
 			<option name="requiresUnits" value="wealth"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="fort" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="fort" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="isConstruction" value="true"/>
 			<option name="constructionType" value="fort_structure"/>
 			<option name="constructionsPerTerrPerTypePerTurn" value="1"/>
 			<option name="maxConstructionsPerTypePerTerr" value="1"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="build_fort" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="build_fort" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="consumesUnits" value="3:wealth"/>
 			<option name="requiresUnits" value="wealth"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="territory_wealth_0" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="territory_wealth_0" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="isConstruction" value="true"/>
 			<option name="constructionType" value="territory_wealth"/>
 			<option name="constructionsPerTerrPerTypePerTurn" value="1"/>
 			<option name="maxConstructionsPerTypePerTerr" value="1"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="territory_wealth_@nums_1_to_6@" foreach="$nums_1_to_6$" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="territory_wealth_@nums_1_to_6@" foreach="$nums_1_to_6$" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="isConstruction" value="true"/>
 			<option name="constructionType" value="territory_wealth"/>
 			<option name="constructionsPerTerrPerTypePerTurn" value="1"/>
 			<option name="maxConstructionsPerTypePerTerr" value="1"/>
 		</attachment>
-		<attachment name="unitAttachment" attachTo="wealth_roll_@nums_1_to_6@" foreach="$nums_1_to_6$" javaClass="UnitAttachment" type="unitType">
+		<attachment name="unitAttachment" attachTo="wealth_roll_@nums_1_to_6@" foreach="$nums_1_to_6$" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
 			<option name="isConstruction" value="true"/>
 			<option name="constructionType" value="wealth_roll"/>
@@ -1975,41 +1975,41 @@
 	</initialize>
 	<propertyList>
 		<!-- HACK: Needed to make canProduceXUnits work! See UnitUtils.java -->
-		<property name="Damage From Bombing Done To Units Instead Of Territories" value="true" editable="false">
+		<property name="Damage From Bombing Done To Units Instead Of Territories" value="true">
 			<boolean/>
 		</property>
-		<property name="Unit Placement In Enemy Seas" value="true" editable="false">
+		<property name="Unit Placement In Enemy Seas" value="true">
 			<boolean/>
 		</property>
-		<property name="Land Battle Rounds" value="1" editable="false">
+		<property name="Land Battle Rounds" value="1">
 			<boolean/>
 		</property>
-		<property name="Abandoned Territories May Be Taken Over Immediately" value="true" editable="false">
+		<property name="Abandoned Territories May Be Taken Over Immediately" value="true">
 			<boolean/>
 		</property>
-		<property name="Sea Battle Rounds" value="1" editable="false">
+		<property name="Sea Battle Rounds" value="1">
 			<boolean/>
 		</property>
-		<property name="Sea Battles May Be Ignored" value="true" editable="false">
+		<property name="Sea Battles May Be Ignored" value="true">
 			<boolean/>
 		</property>
-		<property name="Units Can Load In Hostile Sea Zones" value="true" editable="false">
+		<property name="Units Can Load In Hostile Sea Zones" value="true">
 			<boolean/>
 		</property>
-		<property name="Previous Units Fight" value="true" editable="false">
+		<property name="Previous Units Fight" value="true">
 			<boolean/>
 		</property>
-		<property name="Use Triggers" value="true" editable="false">
+		<property name="Use Triggers" value="true">
 			<boolean/>
 		</property>
-		<property name="Unit Placement Restrictions" value="true" editable="false">
+		<property name="Unit Placement Restrictions" value="true">
 			<boolean/>
 		</property>
-		<property name="Defending Subs Sneak Attack" value="true" editable="false">
+		<property name="Defending Subs Sneak Attack" value="true">
 			<boolean/>
 		</property>
 		<!-- Can remove if we support 2.6+ -->
-		<property name="mapName" value="imperialism_1974_board_game" editable="false"/>
+		<property name="mapName" value="imperialism_1974_board_game"/>
 		<property name="notes">
 			<value><![CDATA[
 				<h1>Imperialism - 1974 Board Game</h1>
