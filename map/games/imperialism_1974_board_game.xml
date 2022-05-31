@@ -349,7 +349,50 @@
 		<territory name="Waco S Coast" water="true"/>
 		<territory name="Waco SE Coast" water="true"/>
 		<territory name="Yorkton Coast" water="true"/>
+		<!-- Wealth Roll territory is where the wealth die is shown. -->
 		<territory name="Wealth Roll" water="true"/>
+		<!-- Threat territory, adjacent to all land territories to make AIs not abandon their territories. -->
+		<territory name="Threat"/>
+		<connection t1="Threat" t2="Aduwa"/>
+		<connection t1="Threat" t2="Aki-Aki"/>
+		<connection t1="Threat" t2="Ambo"/>
+		<connection t1="Threat" t2="Andres"/>
+		<connection t1="Threat" t2="Anyang"/>
+		<connection t1="Threat" t2="Babruysk"/>
+		<connection t1="Threat" t2="Bac Lieu"/>
+		<connection t1="Threat" t2="Bari"/>
+		<connection t1="Threat" t2="Billings"/>
+		<connection t1="Threat" t2="Cartagena"/>
+		<connection t1="Threat" t2="Chefoe"/>
+		<connection t1="Threat" t2="Cork"/>
+		<connection t1="Threat" t2="Culiacan"/>
+		<connection t1="Threat" t2="Dominica"/>
+		<connection t1="Threat" t2="Galway"/>
+		<connection t1="Threat" t2="Gondar"/>
+		<connection t1="Threat" t2="Harbin"/>
+		<connection t1="Threat" t2="Helena"/>
+		<connection t1="Threat" t2="Imphal"/>
+		<connection t1="Threat" t2="Ivanovo"/>
+		<connection t1="Threat" t2="Juwara"/>
+		<connection t1="Threat" t2="Kazan"/>
+		<connection t1="Threat" t2="Kirov"/>
+		<connection t1="Threat" t2="Kowloon"/>
+		<connection t1="Threat" t2="Leon"/>
+		<connection t1="Threat" t2="Lodwar"/>
+		<connection t1="Threat" t2="Lubo"/>
+		<connection t1="Threat" t2="Malden"/>
+		<connection t1="Threat" t2="Mersin"/>
+		<connection t1="Threat" t2="Nicosia"/>
+		<connection t1="Threat" t2="Oaxaca"/>
+		<connection t1="Threat" t2="Palma"/>
+		<connection t1="Threat" t2="Palmyra"/>
+		<connection t1="Threat" t2="Pskov"/>
+		<connection t1="Threat" t2="Reno"/>
+		<connection t1="Threat" t2="St Lucia"/>
+		<connection t1="Threat" t2="Tebuk"/>
+		<connection t1="Threat" t2="Tomsk"/>
+		<connection t1="Threat" t2="Waco"/>
+		<connection t1="Threat" t2="Yorkton"/>
 		<!-- Territory Connections -->
 		<connection t1="Aduwa" t2="Aduwa E Coast"/>
 		<connection t1="Aduwa" t2="Aduwa N Coast"/>
@@ -791,9 +834,13 @@
 			<step name="BrownBattle" delegate="battle" player="Brown"/>
 			<step name="BrownEndTurn" delegate="endTurn" player="Brown"/>
 
+			<!-- Needed to make AI consider "Neutrals" a threat to keep one unit per territory -->
+			<step name="NeutralsCombatMove" delegate="move" player="Neutrals"/>
 			<step name="endRoundStep" delegate="endRound"/>
 		</sequence>
 	</gamePlay>
+	<!-- Needed so that the UI doesn't show default technologies. -->
+	<technology/>
 	<production>
 		<productionRule name="buyArmy">
 			<cost resource="PUs" quantity="1"/>
@@ -947,10 +994,14 @@
 		<attachment name="territoryAttachment" attachTo="Wealth Roll" javaClass="TerritoryAttachment" type="territory">
 			<option name="production" value="0"/>
 		</attachment>
+		<attachment name="territoryAttachment" attachTo="Threat" javaClass="TerritoryAttachment" type="territory">
+			<option name="production" value="0"/>
+			<option name="isImpassable" value="true"/>
+		</attachment>
 		<attachment name="playerAttachment" attachTo="@players@" foreach="$players$" javaClass="PlayerAttachment" type="player">
 			<option name="retainCapitalProduceNumber" value="0"/>
 		</attachment>
-		
+
 		<attachment name="cond_true_@players_and_neutral@" attachTo="@players_and_neutral@" foreach="$players_and_neutral$" javaClass="RulesAttachment" type="player">
 			<option name="switch" value="true"/>
 		</attachment>
@@ -1898,8 +1949,10 @@
 			<territoryOwner territory="Tebuk" owner="Neutrals"/>
 			<territoryOwner territory="Waco" owner="Neutrals"/>
 			<territoryOwner territory="Yorkton" owner="Neutrals"/>
+			<territoryOwner territory="Threat" owner="Neutrals"/>
 		</ownerInitialize>
 		<unitInitialize>
+            <unitPlacement unitType="army" territory="Threat" quantity="1" owner="Neutrals"/>
             <unitPlacement unitType="fort" territory="Anyang" quantity="1" owner="Neutrals"/>
             <unitPlacement unitType="army" territory="Anyang" quantity="1" owner="Neutrals"/>
             <unitPlacement unitType="fort" territory="Bac Lieu" quantity="1" owner="Neutrals"/>
