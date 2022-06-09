@@ -1021,7 +1021,7 @@
 		</attachment>
 
         <attachment name="set_territory_effects" attachTo="Neutrals" javaClass="TriggerAttachment" type="player">
-            <option name="when" value="before:setupRandomStartDelegate"/>
+            <option name="when" value="after:gameInitDelegate"/>
 			<option name="conditions" value="cond_true_Neutrals"/>
             <option name="territories" value="$mountains$"/>
 		    <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
