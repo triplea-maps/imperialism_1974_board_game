@@ -25,6 +25,7 @@ On your turn, you roll a die to determine which territories generate wealth. Eac
 *   Unit production is done at ports and requires spending wealth units present in the port. To build structures, you will first purchase and place corresponding "build" units in the port territory with the required wealth, following which you'll be given the actual unit to place elsewhere on the map.
 *   Ships are built in a similar way as structures, except the player should (honor system) then place them next to the port where they were built.
 *   Loading and unloading units requires fleets to be on coasts, represented by seperate sea zones.
+*   Armies attacking mountain territories attack on a 1 instead of 2.
 
 ### Unit summary and victory points
 
