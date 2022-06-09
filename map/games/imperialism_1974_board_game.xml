@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-	<info name="Imperialism 1974 Board Game" version="2.5"/>
+	<info name="Imperialism 1974 Board Game" version="0.3"/>
+	<triplea minimumVersion="2.5"/>
 	<loader javaClass="games.strategy.triplea.TripleA"/>
 	<variableList>
 		<variable name="nums_1_to_6">
@@ -59,6 +60,10 @@
 			<element name="Purple"/>
 			<element name="Brown"/>
 			<element name="Neutrals"/>
+		</variable>
+		<variable name="mountains">
+			<element name="Pskov"/>
+			<element name="Bari"/>
 		</variable>
 		<variable name="old_world_land_territories">
 			<element name="Anyang"/>
@@ -719,6 +724,9 @@
 		<unit name="wealth_roll_5"/>
 		<unit name="wealth_roll_6"/>
 	</unitList>
+    <territoryEffectList>
+        <territoryEffect name="Mountains"/>
+    </territoryEffectList>
 	<gamePlay>
 		<delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
         <delegate name="randomStartDelegate" javaClass="games.strategy.triplea.delegate.RandomStartDelegate" display="Choose Starting Locations"/>
@@ -914,8 +922,8 @@
 			<option name="isSea" value="true"/>
 			<option name="isCombatTransport" value="true"/>
 			<option name="transportCapacity" value="1"/>
-			<option name="attack" value="2"/>
-			<option name="defense" value="2"/>
+			<option name="attack" value="0"/>
+			<option name="defense" value="0"/>
 		</attachment>
 		<attachment name="unitAttachment" attachTo="build_fleet" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
@@ -998,6 +1006,12 @@
 			<option name="production" value="0"/>
 			<option name="isImpassable" value="true"/>
 		</attachment>
+
+		<attachment name="territoryEffectAttachment" attachTo="Mountains" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+			<option name="combatOffenseEffect" value="army" count="-1"/>
+			<option name="unitsNotAllowed" value="wealth"/>
+		</attachment>
+
 		<attachment name="playerAttachment" attachTo="@players@" foreach="$players$" javaClass="PlayerAttachment" type="player">
 			<option name="retainCapitalProduceNumber" value="0"/>
 		</attachment>
@@ -1005,6 +1019,14 @@
 		<attachment name="cond_true_@players_and_neutral@" attachTo="@players_and_neutral@" foreach="$players_and_neutral$" javaClass="RulesAttachment" type="player">
 			<option name="switch" value="true"/>
 		</attachment>
+
+        <attachment name="set_territory_effects" attachTo="Neutrals" javaClass="TriggerAttachment" type="player">
+            <option name="when" value="before:setupRandomStartDelegate"/>
+			<option name="conditions" value="cond_true_Neutrals"/>
+            <option name="territories" value="$mountains$"/>
+		    <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+		    <option name="territoryProperty" value="territoryEffect" count="Mountains"/>
+        </attachment>
 
 		<!-- Generate wealth units in territories, based on the wealth die roll and territory wealth values. -->
 		<!-- Roll one dice and set its result in Wealth Roll. -->
@@ -1471,8 +1493,8 @@
 			<option name="placement" value="@old_world_land_territories@:fort" count="1"/>
 			<option name="placement" value="@old_world_land_territories@:army" count="10"/>
         </attachment>
-		<!-- For some reason, can"t attach these to Neutral player. So attach to Blue. This is OK even if Blue is disabled. -->
-		<attachment name="is_neutral_@old_world_land_territories@" attachTo="Blue"
+		
+		<attachment name="is_neutral_@old_world_land_territories@" attachTo="Neutrals"
 			foreach="$old_world_land_territories$" javaClass="RulesAttachment" type="player">
 			<option name="directOwnershipTerritories" value="@old_world_land_territories@"/>
 			<option name="players" value="Neutrals:Neutral"/>
@@ -1493,6 +1515,7 @@
 			<option name="purchase" value="fleet" count="5"/>
 			<option name="uses" value="1"/>
         </attachment>
+
 		<attachment name="was_territory_abandoned_@players@_@land_territories@" attachTo="@players@"
 			foreach="$players$^$land_territories$" javaClass="RulesAttachment" type="player">
 			<option name="directOwnershipTerritories" value="@land_territories@"/>

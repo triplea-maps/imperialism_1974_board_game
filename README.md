@@ -50,7 +50,7 @@ The board game specifies that the game ends when the last card is drawn from the
 *   Randomization of player order, which can be done outside TripleA before starting
 *   Drawing and playing cards from the deck
 *   Random Storm/Pirate events
-*   Terrain types - mountains, rivers, etc and their effects
+*   Border terrain types - mountains, rivers, etc and their effects
 *   Combat dice calculations matching the original game
 *   Land battles being optional
 *   Being able to select which opponent(s) you fight when 3+ players in territory
