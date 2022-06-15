@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-	<info name="Imperialism 1974 Board Game" version="0.3"/>
+	<info name="Imperialism 1974 Board Game" version="0.4"/>
 	<triplea minimumVersion="2.5"/>
 	<loader javaClass="games.strategy.triplea.TripleA"/>
 	<variableList>
@@ -1912,7 +1912,7 @@
 			<option name="activateTrigger" value="add_fort_defense_19_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
 			<option name="activateTrigger" value="add_fort_defense_20_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
 		</attachment>
-		
+
 		<attachment name="update_fort_defenses_@players_and_neutral@_@land_territories@" attachTo="@players_and_neutral@"
 			foreach="$players_and_neutral$^$land_territories$" javaClass="TriggerAttachment" type="player">
 			<!-- We need to do it for all players' phases because we're adding units for the defender. -->
@@ -1931,7 +1931,7 @@
 			<option name="activateTrigger" value="remove_fort_defenses_@players_and_neutral@_@land_territories@:1:false:false:false:false"/>
 			<option name="activateTrigger" value="add_fort_defenses_@players_and_neutral@_@land_territories@:1:false:false:true:false"/>
 		</attachment>
-		
+
 		<attachment name="remove_own_fort_defense_@players@" attachTo="@players@" foreach="$players$"
 			javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="cond_true_@players@"/>
@@ -1997,8 +1997,18 @@
 		</resourceInitialize>
 	</initialize>
 	<propertyList>
+		<property name="Use Triggers" value="true">
+			<boolean/>
+		</property>
 		<!-- HACK: Needed to make canProduceXUnits work! See UnitUtils.java -->
 		<property name="Damage From Bombing Done To Units Instead Of Territories" value="true">
+			<boolean/>
+		</property>
+		<!-- Required to have first strike work on defense. -->
+		<property name="Defending Subs Sneak Attack" value="true">
+			<boolean/>
+		</property>
+		<property name="Unit Placement Restrictions" value="true">
 			<boolean/>
 		</property>
 		<property name="Unit Placement In Enemy Seas" value="true">
@@ -2007,7 +2017,15 @@
 		<property name="Land Battle Rounds" value="1">
 			<boolean/>
 		</property>
+		<!-- Introduced in 2.6. -->
+		<property name="Land Battles May Be Ignored" value="true">
+			<boolean/>
+		</property>
 		<property name="Abandoned Territories May Be Taken Over Immediately" value="true">
+			<boolean/>
+		</property>
+		<!-- Introduced in 2.6. -->
+		<property name="All Units Can Attack From Contested Territories" value="true">
 			<boolean/>
 		</property>
 		<property name="Sea Battle Rounds" value="1">
@@ -2017,23 +2035,6 @@
 			<boolean/>
 		</property>
 		<property name="Units Can Load In Hostile Sea Zones" value="true">
-			<boolean/>
-		</property>
-		<property name="Previous Units Fight" value="true">
-			<boolean/>
-		</property>
-		<property name="Use Triggers" value="true">
-			<boolean/>
-		</property>
-		<property name="Unit Placement Restrictions" value="true">
-			<boolean/>
-		</property>
-		<!-- Required to have first strike work on defense. -->
-		<property name="Defending Subs Sneak Attack" value="true">
-			<boolean/>
-		</property>
-		<!-- Introduced in 2.6. -->
-		<property name="All Units Can Attack From Contested Territories" value="true">
 			<boolean/>
 		</property>
 		<!-- Can remove if we support 2.6+ -->
@@ -2049,7 +2050,9 @@
 				<p>It has a number of unique mechanics that differ from other TripleA maps. At the same time,
 				various features of the original game are not currently possible with TripleA; these are documented
 				later.</p>
-				<p>The map is generally playable, except for AI which struggles with the mechanics.</p>
+
+				<p>The map is generally playable. AIs do not work properly with TripleA 2.5, but are better on 2.6
+				where they're able to play effectively on the main continent, but are not able to explore yet.</p>
 
 				<h3>Overview</h3>
 				<p>In this game, players start in the "old world" and sail to explore and gain control of
@@ -2109,9 +2112,9 @@
 					<li>Random Storm/Pirate events</li>
 					<li>Terrain types - mountains, rivers, etc and their effects</li>
 					<li>Combat dice calculations matching the original game</li>
-					<li>Land battles being optional</li>
+					<li>Land battles being optional (except with TripleA 2.6+)</li>
 					<li>Being able to select which opponent(s) you fight when 3+ players in territory</li>
-					<li>Being able to leave contested land territories</li>
+					<li>Being able to leave contested land territories (except with TripleA 2.6+)</li>
 					<li>Being able to capture wealth cargo at sea</li>
 					<li>Being able to load newly-built armies on fleets</li>
 					<li>Ships on coasts being able to participate in adjacent sea combats</li>
@@ -2125,7 +2128,7 @@
 					<li>Placing built fleets in ports elsewhere than where the wealth to build them came from</li> 
 					<li>Splitting up placement of the initial fleet</li> 
 				</ul>
-				
+
 				<h3>Credits</h3>
 				<p>Some of the images (port icon, gear icon, etc) come from <a href="https://openmoji.org/">OpenMoji</a> – the open-source emoji and icon project. License: CC BY-SA 4.0</p>
 				]]></value>

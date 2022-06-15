@@ -5,7 +5,7 @@ This map is an adaptation of the 1974 board game Imperialism to the TripleA engi
 
 It has a number of unique mechanics that differ from other TripleA maps. At the same time, various features of the original game are not currently possible with TripleA; these are documented later.
 
-The map is generally playable, except for AI which struggles with the mechanics.
+The map is generally playable. AIs do not work properly with TripleA 2.5, but are better on 2.6 where they're able to play effectively on the main continent, but are not able to explore yet.
 
 ### Overview
 
@@ -53,9 +53,9 @@ The board game specifies that the game ends when the last card is drawn from the
 *   Random Storm/Pirate events
 *   Border terrain types - mountains, rivers, etc and their effects
 *   Combat dice calculations matching the original game
-*   Land battles being optional
+*   Land battles being optional (except with TripleA 2.6+)
 *   Being able to select which opponent(s) you fight when 3+ players in territory
-*   Being able to leave contested land territories
+*   Being able to leave contested land territories (except with TripleA 2.6+)
 *   Being able to capture wealth cargo at sea
 *   Being able to load newly-built armies on fleets
 *   Ships on coasts being able to participate in adjacent sea combats
