@@ -2028,7 +2028,12 @@
 		<property name="Unit Placement Restrictions" value="true">
 			<boolean/>
 		</property>
+		<!-- Required to have first strike work on defense. -->
 		<property name="Defending Subs Sneak Attack" value="true">
+			<boolean/>
+		</property>
+		<!-- Introduced in 2.6. -->
+		<property name="All Units Can Attack From Contested Territories" value="true">
 			<boolean/>
 		</property>
 		<!-- Can remove if we support 2.6+ -->
