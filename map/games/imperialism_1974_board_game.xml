@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-	<info name="Imperialism 1974 Board Game" version="0.4"/>
+	<info name="Imperialism 1974 Board Game" version="0.5"/>
 	<triplea minimumVersion="2.5"/>
 	<loader javaClass="games.strategy.triplea.TripleA"/>
 	<variableList>
@@ -922,8 +922,8 @@
 			<option name="isSea" value="true"/>
 			<option name="isCombatTransport" value="true"/>
 			<option name="transportCapacity" value="1"/>
-			<option name="attack" value="0"/>
-			<option name="defense" value="0"/>
+			<option name="attack" value="1"/>
+			<option name="defense" value="1"/>
 		</attachment>
 		<attachment name="unitAttachment" attachTo="build_fleet" javaClass="UnitAttachment">
 			<option name="isInfrastructure" value="true"/>
