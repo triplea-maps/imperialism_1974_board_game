@@ -2014,6 +2014,15 @@
 			<heldUnits unitType="port" quantity="1" player="Brown"/>
 		</unitInitialize>
 		<resourceInitialize>
+			<!-- Set VPs to the starting amount, before they get recalculated. -->
+            <resourceGiven player="Blue" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Red" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Green" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Yellow" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Orange" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Cyan" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Purple" resource="Victory Points" quantity="44"/>
+            <resourceGiven player="Brown" resource="Victory Points" quantity="44"/>			
 		</resourceInitialize>
 	</initialize>
 	<propertyList>
