@@ -737,6 +737,7 @@
 		<delegate name="structures_place" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Place Structures &amp; Ships"/>
 		<delegate name="move" javaClass="games.strategy.triplea.delegate.MoveDelegate" display="Movement"/>
 		<delegate name="battle" javaClass="games.strategy.triplea.delegate.BattleDelegate" display="Combat"/>
+		<delegate name="update_vps" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Update VPs"/>
 		<delegate name="endTurn" javaClass="games.strategy.triplea.delegate.NoPUEndTurnDelegate" display="Turn Complete"/>
 		<delegate name="endRound" javaClass="games.strategy.triplea.delegate.EndRoundDelegate" display="Round Complete"/>
 		<sequence>
@@ -749,18 +750,22 @@
 			</forEach>
 			<forEach variable="$players$">
 				<step name="@players@WealthPlace" delegate="wealth_place" player="@players@"/>
+				<step name="@players@UpdateVPsPlace" delegate="update_vps" player="@players@"/>
 				<step name="@players@Purchase" delegate="purchase" player="@players@"/>
 				<step name="@players@Place" delegate="place" player="@players@"/>
 				<step name="@players@StructuresPlace" delegate="structures_place" player="@players@"/>
+				<step name="@players@UpdateVPsPlace" delegate="update_vps" player="@players@"/>
 				<step name="@players@CombatMove" delegate="move" player="@players@">
 					<stepProperty name="resetUnitStateAtStart" value="true"/>
 				</step>
 				<step name="@players@NonCombatMove" delegate="move" player="@players@"/>
 				<step name="@players@Battle" delegate="battle" player="@players@"/>
+				<step name="@players@UpdateVPsPlace" delegate="update_vps" player="@players@"/>
 				<step name="@players@EndTurn" delegate="endTurn" player="@players@"/>
 			</forEach>
 			-->
 
+			<!-- Place initial fleets -->
 			<step name="BlueFleetPlace" delegate="fleet_place" player="Blue" maxRunCount="1"/>
 			<step name="RedFleetPlace" delegate="fleet_place" player="Red" maxRunCount="1"/>
 			<step name="GreenFleetPlace" delegate="fleet_place" player="Green" maxRunCount="1"/>
@@ -769,77 +774,109 @@
 			<step name="CyanFleetPlace" delegate="fleet_place" player="Cyan" maxRunCount="1"/>
 			<step name="PurpleFleetPlace" delegate="fleet_place" player="Purple" maxRunCount="1"/>
 			<step name="BrownFleetPlace" delegate="fleet_place" player="Brown" maxRunCount="1"/>
+			<!-- Blue -->
 			<step name="BlueWealthPlace" delegate="wealth_place" player="Blue"/>
+			<step name="BlueUpdateVPsPlace" delegate="update_vps" player="Blue"/>
 			<step name="BluePurchase" delegate="purchase" player="Blue"/>
 			<step name="BluePlace" delegate="place" player="Blue"/>
 			<step name="BlueStructuresPlace" delegate="structures_place" player="Blue"/>
+			<step name="BlueUpdateVPsPlace" delegate="update_vps" player="Blue"/>
 			<step name="BlueCombatMove" delegate="move" player="Blue">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="BlueBattle" delegate="battle" player="Blue"/>
+			<step name="BlueUpdateVPsPlace" delegate="update_vps" player="Blue"/>
 			<step name="BlueEndTurn" delegate="endTurn" player="Blue"/>
+			<!-- Red -->
 			<step name="RedWealthPlace" delegate="wealth_place" player="Red"/>
+			<step name="RedUpdateVPsPlace" delegate="update_vps" player="Red"/>
 			<step name="RedPurchase" delegate="purchase" player="Red"/>
 			<step name="RedPlace" delegate="place" player="Red"/>
 			<step name="RedStructuresPlace" delegate="structures_place" player="Red"/>
+			<step name="RedUpdateVPsPlace" delegate="update_vps" player="Red"/>
 			<step name="RedCombatMove" delegate="move" player="Red">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="RedBattle" delegate="battle" player="Red"/>
+			<step name="RedUpdateVPsPlace" delegate="update_vps" player="Red"/>
 			<step name="RedEndTurn" delegate="endTurn" player="Red"/>
+			<!-- Green -->
 			<step name="GreenWealthPlace" delegate="wealth_place" player="Green"/>
+			<step name="GreenUpdateVPsPlace" delegate="update_vps" player="Green"/>
 			<step name="GreenPurchase" delegate="purchase" player="Green"/>
 			<step name="GreenPlace" delegate="place" player="Green"/>
 			<step name="GreenStructuresPlace" delegate="structures_place" player="Green"/>
+			<step name="GreenUpdateVPsPlace" delegate="update_vps" player="Green"/>
 			<step name="GreenCombatMove" delegate="move" player="Green">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="GreenBattle" delegate="battle" player="Green"/>
+			<step name="GreenUpdateVPsPlace" delegate="update_vps" player="Green"/>
 			<step name="GreenEndTurn" delegate="endTurn" player="Green"/>
+			<!-- Yellow -->
 			<step name="YellowWealthPlace" delegate="wealth_place" player="Yellow"/>
+			<step name="YellowUpdateVPsPlace" delegate="update_vps" player="Yellow"/>
 			<step name="YellowPurchase" delegate="purchase" player="Yellow"/>
 			<step name="YellowPlace" delegate="place" player="Yellow"/>
 			<step name="YellowStructuresPlace" delegate="structures_place" player="Yellow"/>
+			<step name="YellowUpdateVPsPlace" delegate="update_vps" player="Yellow"/>
 			<step name="YellowCombatMove" delegate="move" player="Yellow">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="YellowBattle" delegate="battle" player="Yellow"/>
+			<step name="YellowUpdateVPsPlace" delegate="update_vps" player="Yellow"/>
 			<step name="YellowEndTurn" delegate="endTurn" player="Yellow"/>
+			<!-- Orange -->
 			<step name="OrangeWealthPlace" delegate="wealth_place" player="Orange"/>
+			<step name="OrangeUpdateVPsPlace" delegate="update_vps" player="Orange"/>
 			<step name="OrangePurchase" delegate="purchase" player="Orange"/>
 			<step name="OrangePlace" delegate="place" player="Orange"/>
 			<step name="OrangeStructuresPlace" delegate="structures_place" player="Orange"/>
+			<step name="OrangeUpdateVPsPlace" delegate="update_vps" player="Orange"/>
 			<step name="OrangeCombatMove" delegate="move" player="Orange">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="OrangeBattle" delegate="battle" player="Orange"/>
+			<step name="OrangeUpdateVPsPlace" delegate="update_vps" player="Orange"/>
 			<step name="OrangeEndTurn" delegate="endTurn" player="Orange"/>
+			<!-- Cyan -->
 			<step name="CyanWealthPlace" delegate="wealth_place" player="Cyan"/>
+			<step name="CyanUpdateVPsPlace" delegate="update_vps" player="Cyan"/>
 			<step name="CyanPurchase" delegate="purchase" player="Cyan"/>
 			<step name="CyanPlace" delegate="place" player="Cyan"/>
 			<step name="CyanStructuresPlace" delegate="place" player="Cyan"/>
+			<step name="CyanUpdateVPsPlace" delegate="update_vps" player="Cyan"/>
 			<step name="CyanCombatMove" delegate="move" player="Cyan">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="CyanBattle" delegate="battle" player="Cyan"/>
+			<step name="CyanUpdateVPsPlace" delegate="update_vps" player="Cyan"/>
 			<step name="CyanEndTurn" delegate="endTurn" player="Cyan"/>
+			<!-- Purple -->
 			<step name="PurpleWealthPlace" delegate="wealth_place" player="Purple"/>
+			<step name="PurpleUpdateVPsPlace" delegate="update_vps" player="Purple"/>
 			<step name="PurplePurchase" delegate="purchase" player="Purple"/>
 			<step name="PurplePlace" delegate="place" player="Purple"/>
 			<step name="PurpleStructuresPlace" delegate="place" player="Purple"/>
+			<step name="PurpleUpdateVPsPlace" delegate="update_vps" player="Purple"/>
 			<step name="PurpleCombatMove" delegate="move" player="Purple">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="PurpleBattle" delegate="battle" player="Purple"/>
+			<step name="PurpleUpdateVPsPlace" delegate="update_vps" player="Purple"/>
 			<step name="PurpleEndTurn" delegate="endTurn" player="Purple"/>
+			<!-- Brown -->
 			<step name="BrownWealthPlace" delegate="wealth_place" player="Brown"/>
+			<step name="BrownUpdateVPsPlace" delegate="update_vps" player="Brown"/>
 			<step name="BrownPurchase" delegate="purchase" player="Brown"/>
 			<step name="BrownPlace" delegate="place" player="Brown"/>
 			<step name="BrownStructuresPlace" delegate="structures_place" player="Brown"/>
+			<step name="BrownUpdateVPsPlace" delegate="update_vps" player="Brown"/>
 			<step name="BrownCombatMove" delegate="move" player="Brown">
                 <stepProperty name="resetUnitStateAtStart" value="true"/>
 			</step>
 			<step name="BrownBattle" delegate="battle" player="Brown"/>
+			<step name="BrownUpdateVPsPlace" delegate="update_vps" player="Brown"/>
 			<step name="BrownEndTurn" delegate="endTurn" player="Brown"/>
 
 			<!-- Needed to make AI consider "Neutrals" a threat to keep one unit per territory -->
@@ -1536,10 +1573,7 @@
 		<!-- Counting victory points. We update at 3 different steps each turn. -->
 		<attachment name="trigger_reset_VPs_@players@" attachTo="@players@" foreach="$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="cond_true_@players@"/>
-			<!-- Reset needs to be guaranteed before the other triggers, so always a half-step before. -->
-			<option name="when" value="after:@players@WealthPlace"/>
-			<option name="when" value="before:@players@StructuresPlace"/>
-			<option name="when" value="before:@players@EndTurn"/>
+			<option name="when" value="before:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="-999"/>
 		</attachment>
@@ -1551,9 +1585,7 @@
 		</attachment>
 		<attachment name="add_port_VPs_@players@" attachTo="@players@" foreach="$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="port_count_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="10"/>
 		</attachment>
@@ -1565,9 +1597,7 @@
 		</attachment>
 		<attachment name="add_city_VPs_@players@" attachTo="@players@" foreach="$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="city_count_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="6"/>
 		</attachment>
@@ -1579,9 +1609,7 @@
 		</attachment>
 		<attachment name="add_fort_VPs_@players@" attachTo="@players@" foreach="$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="fort_count_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="2"/>
 		</attachment>
@@ -1593,9 +1621,7 @@
 		</attachment>
 		<attachment name="add_wealth_VPs_@nums_1_to_25@_@players@" attachTo="@players@" foreach="$nums_1_to_25$^$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="wealth_count_@nums_1_to_25@_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="2"/>
 		</attachment>
@@ -1608,9 +1634,7 @@
 		</attachment>
 		<attachment name="add_army_VPs_@nums_1_to_25@_@players@" attachTo="@players@" foreach="$nums_1_to_25$^$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="zones_with_army_count_@nums_1_to_25@_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="1"/>
 		</attachment>
@@ -1623,9 +1647,7 @@
 		</attachment>
 		<attachment name="add_fleet_VPs_@nums_1_to_25@_@players@" attachTo="@players@" foreach="$nums_1_to_25$^$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="zones_with_fleet_count_@nums_1_to_25@_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<option name="resource" value="Victory Points"/>
 			<option name="resourceCount" value="2"/>
 		</attachment>
@@ -1645,9 +1667,7 @@
 		<attachment name="add_VPs_per_territory_wealth_@nums_1_to_6@_@players@" attachTo="@players@"
 			foreach="$nums_1_to_6$^$players$" javaClass="TriggerAttachment" type="player">
 			<option name="conditions" value="territory_wealth_@nums_1_to_6@_count_@players@"/>
-			<option name="when" value="before:@players@Purchase"/>
-			<option name="when" value="after:@players@StructuresPlace"/>
-			<option name="when" value="after:@players@EndTurn"/>
+			<option name="when" value="after:@players@UpdateVPsPlace"/>
 			<!-- Activate twice, since we want 2 VPs per wealth value. -->
 			<option name="activateTrigger" value="add_VPs_for_territory_wealth_@nums_1_to_6@_@players@:1:false:false:false:false"/>
 			<option name="activateTrigger" value="add_VPs_for_territory_wealth_@nums_1_to_6@_@players@:1:false:false:false:false"/>
