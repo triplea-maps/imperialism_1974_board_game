@@ -1,0 +1,7 @@
+Here are the TripleA engine features that this map would benefit from:
+
+1. Ability for a support unit to provide an additional first strike roll to the unit it's supporting
+2. The ability for a script to count units and do a trigger that many times
+3. Feature for the map to disable roll notifications are disabled by default
+4. Directional terrain effects (between territories)
+5. Various AI improvements. (Choosing starting territory, exploring beyond the home island, etc.)
