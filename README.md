@@ -16,6 +16,7 @@ On your turn, you roll a die to determine which territories generate wealth. Eac
 ### Additional rules
 
 *   Players choose their starting territory, which must be on a coast in the old world (top left island).
+*   Battles are optional and are limited to one round. When not decisive, armies will remain and territory control does not change.
 *   Armies and fleets attack and defend on 2. Forts provide defense support with an extra strength 2 first strike roll per defending army. Note: This is different from the original board game combat rules, which TripleA isn't able to support.</li>
 *   Armies, fleet and wealth have a movement of 1\. A fleet can transport an army or a wealth.
 *   Structures and wealth are capturable.
