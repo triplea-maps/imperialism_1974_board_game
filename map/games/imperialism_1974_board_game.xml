@@ -2,8 +2,8 @@
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
 	<info name="Imperialism 1974 Board Game" version="0.5"/>
-	<triplea minimumVersion="2.5"/>
 	<loader javaClass="games.strategy.triplea.TripleA"/>
+	<triplea minimumVersion="2.5"/>
 	<variableList>
 		<variable name="nums_1_to_6">
 			<element name="1"/>
@@ -884,8 +884,6 @@
 			<step name="endRoundStep" delegate="endRound"/>
 		</sequence>
 	</gamePlay>
-	<!-- Needed so that the UI doesn't show default technologies. -->
-	<technology/>
 	<production>
 		<productionRule name="buyArmy">
 			<cost resource="PUs" quantity="1"/>
@@ -923,6 +921,8 @@
 		<playerProduction player="Purple" frontier="production"/>
 		<playerProduction player="Brown" frontier="production"/>
 	</production>
+	<!-- Needed so that the UI doesn't show default technologies. -->
+	<technology/>
 	<attachmentList>
 		<attachment name="unitAttachment" attachTo="wealth" javaClass="UnitAttachment">
 			<option name="movement" value="1"/>
