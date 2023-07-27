@@ -22,10 +22,10 @@ On your turn, you roll a die to determine which territories generate wealth. Eac
 *   Structures and wealth are capturable.
 *   Production and placement are before movement. No separate non-combat move.
 *   Newly-built armies cannot participate in attacks.
-*   Territories with no armies in them will revert back to Neutral control and will not generate wealth.
+*   Territories with no armies in them will revert to Neutral control and will not generate wealth.
 *   Unit production is done at ports and requires spending wealth units present in the port. To build structures, you will first purchase and place corresponding "build" units in the port territory with the required wealth, following which you'll be given the actual unit to place elsewhere on the map.
 *   Ships are built in a similar way as structures, except the player should (honor system) then place them next to the port where they were built.
-*   Loading and unloading units requires fleets to be on coasts, represented by seperate sea zones.
+*   Loading and unloading units requires fleets to be on coasts, represented by separate sea zones.
 *   Armies attacking mountain territories attack on a 1 instead of 2.
 
 ### Unit summary and victory points
@@ -45,7 +45,7 @@ The goal is to have the most victory points at the end of the game, based on:
 
 Victory points are automatically tracked by the game as a resource.
 
-The board game specifies that the game ends when the last card is drawn from the deck, but the card mechanics are not implemented in this version. Players can instead agree on a pretedetermined round number to end the game - or play until surrender.
+The board game specifies that the game ends when the last card is drawn from the deck, but the card mechanics are not implemented in this version. Players can instead agree on a predetermined round number to end the game - or play until surrender.
 
 ### Original board game functionality missing from this adaptation
 
